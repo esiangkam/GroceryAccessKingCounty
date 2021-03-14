@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Emily Siangkam">
+  <title>Web Mapping Application Template</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.css">
+  <style>
+    html,
+    body,
+    main {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+    }
+    #map {
+      flex-grow: 1;
+    }
+  </style>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.js"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Food in King County</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <main role="main">
+    <div id="map"></div>
+  </main>
+  <script>
+    // 1. Create a map object.
+    var mymap = L.map('map', {
+      center: [47.55799042752343, -122.30375024543308],
+      zoom: 10,
+      maxZoom: 16,
+      minZoom: 1,
+      detectRetina: true
+    });
+
+    // 2. Add a base map.
+    L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(mymap);
+
+    // 3. Add grocery stores GeoJSON Data
+    // Null variable that will hold stores data
+    var stores = null;
+
+    // Get GeoJSON and put on it on the map when it loads
+    stores = L.geoJson.ajax("assets/grocerystores.geojson", {
+        // assign a function to the onEachFeature parameter of the stores object.
+        // Then each (point) feature will bind a popup window.
+        // The content of the popup window is the value of `feature.properties.AIRPT_NAME`
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup('<center>' + feature.properties.NAME + "<br> Location: " + feature.properties.ADDRESS + ', </br>' + feature.properties.CITY);
+        },
+
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-shopping-basket', color: '#447bd4'})});
+            },
+        attribution: 'Basemap by CartoDB | Made by Emily Siangkam'
+    }).addTo(mymap);
+
+    // 4. Add a scale bar to map
+    L.control.scale({position: 'bottomleft'}).addTo(mymap);
+
+    // 5. Add coordinates on map for mouse position
+    L.control.mousePosition().addTo(mymap);
+
+
+</script>
+</body>
+</html>
