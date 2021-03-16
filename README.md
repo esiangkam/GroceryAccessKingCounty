@@ -1,6 +1,7 @@
 # Grocery Store Access in King County
 
 ![Grocery Store Access Map screenshot](img/map.png)
+Access Grocery Store Access in King County here: https://esiangkam.github.io/GroceryAccessKingCounty/
 
 ## Project Description
 Grocery Store Access in King County offers a visualization of the relationships between grocery facilities throughout King County and a person's ability to access them. Through this mapping project, users can compare the relationships between grocery stores alongside factors such as median household income, percent people of color, public transit routes, and the total population for a census tract.
