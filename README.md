@@ -1,10 +1,12 @@
 # Grocery Store Access in King County
 
+![Grocery Store Access Map screenshot](img/map.png)
+
 ## Project Description
 Grocery Store Access in King County offers a visualization of the relationships between grocery facilities throughout King County and a person's ability to access them. Through this mapping project, users can compare the relationships between grocery stores alongside factors such as median household income, percent people of color, public transit routes, and the total population for a census tract.
 
 ## Project Goal
-Oftentimes, a person's accessibility for healthy food is limited by their whether or not they have access to transportation, or certain types of stores may be located in more affluent areas. This project attempts to allow users to come to explore these relationships and come to their own conclusions.
+Oftentimes, a person's accessibility for healthy food is limited by their whether or not they have access to transportation, or certain types of stores may be located in more affluent areas. The goal of this project is to offer a simple means of visualization for King County residents and demonstrate barriers that may prevent people from accessing the resources they need. This project is also set up to allow users to freely explore these relationships and come to their own conclusions about the county's infrastructure.
 
 ## Data Sources
 Much of this data can be found on the King County Open GIS Data website, which consolidated census data from the US Census American Community Survey, or data the county tracks themselves. Although there are no dates for this data, most were last updated in 2020.
