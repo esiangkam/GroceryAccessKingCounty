@@ -1,72 +1,93 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Emily Siangkam">
-  <title>Grocery Store Access in King County</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.css">
-  <style>
-    html,
-    body,
-    main {
-      width: 100%;
-      height: 100%;
-      margin: 10;
-      padding: 10;
-      background: #fff;
-      display: flex;
-      flex-flow: column;
-      height: 0%;
-    }
-  </style>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.js"></script>
-
-</head>
-<body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Grocery Store Access in King County</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-
-  <main role="main">
-    <div id="map"></div>
-  </main>
-  <main role="main" class="container">
-    <div class="inner_cell">
-        <div class="text_cell_render border-box-sizing rendered_html">
-          <br><br><br>
-          <h1 id="Grocery Stores"> About Grocery Store Access in King County</h1>
-          <br>
-          <p> Grocery Store Access in King County provides a visualization of the locations of grocery food facilities throughout King County.</p>
-          <h2 id="Data Sources">Data Attributions</h2>
-        </div>
-    </div>
-  </main>
-</body>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="Emily Siangkam">
+      <title>Grocery Store Access in King County</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <style>
+         html,
+         body,
+         main {
+         width: 100%;
+         height: 100%;
+         margin: 10;
+         padding: 10;
+         background: #fff;
+         display: flex;
+         flex-flow: column;
+         height: 0%;
+         }
+      </style>
+      <script src="js/bootstrap.bundle.min.js"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+         <a class="navbar-brand" href="index.html">Grocery Store Access in King County</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <main role="main">
+         <div id="map"></div>
+      </main>
+      <main role="main" class="container">
+         <div class="inner_cell">
+            <div class="text_cell_render border-box-sizing rendered_html">
+               <br><br><br>
+               <h1 id="Grocery Stores">
+                  <center>
+                  About Grocery Store Access in King County
+               </h1>
+               <br>
+               <h4>
+                  <center>
+                  Created by Emily Siangkam
+               </h4>
+               <br>
+               <p> Grocery Store Access in King County offers a visualization of the relationships
+                  between grocery facilities throughout King County and a person's ability to access
+                  them. Oftentimes, a person's accessibility for healthy food is limited by their
+                  whether or not they have access to transportation, or certain types of stores may be
+                  located in more affluent areas. This project attempts to allow users to come to explore
+                  these relationships and come to their own conclusions.
+               </p>
+               <p> Inspiration for this project came from the <a href="https://www.kingcounty.gov/depts/health/data/~/media/depts/health/data/documents/healthy-food-availability-report.ashx">Healthy
+                  Food Availability and Food Bank Network Report</a> put out in February 2019. However, considering
+                  there is very limited data on what the researchers define as "healthy" food, and other information
+                  such as travel time to these locations, further work is needed to fully understand the implications
+                  this visualization may have.
+               </p>
+               <h3 id="Data Attributions">
+               Data Attributions</h2>
+               <p> Most of the data for this project came from <a href="https://gis-kingcounty.opendata.arcgis.com/">King County Open GIS Data</a>.
+                  From this site, the data for <a href="https://gis-kingcounty.opendata.arcgis.com/datasets/food-facilites-multiple-classes-for-king-county-food-facilities-point/data?orderBy=SEAT_CAP&page=14">grocery stores</a>
+                  <a href="https://gis-kingcounty.opendata.arcgis.com/datasets/median-household-income/data?geometry=-127.019%2C46.778%2C-116.566%2C48.078">median household income</a>,
+                  <a href="https://gis-kingcounty.opendata.arcgis.com/datasets/percent-people-of-color/data?geometry=-123.099%2C47.269%2C-120.486%2C47.594">percent people of color</a>,
+                  <a href="https://gis-kingcounty.opendata.arcgis.com/datasets/transit-routes-for-king-county-metro-transitroute-line/data?geometry=-122.470%2C47.467%2C-121.816%2C47.548&orderBy=CURRENT_NEXT_CODE">transit routes</a>,
+                  and <a href= "https://gis-kingcounty.opendata.arcgis.com/datasets/acs-total-population-acs-b01003-totalpop/data?geometry=-124.412%2C47.106%2C-119.186%2C47.757">total population</a>
+                  in King County. Some of the grocery stores were also located using Google searches with <a href="https://phantombuster.com/">PhantomBuster</a>, a site
+                  that allows users to conduct data extractions from web searches.
+               </p>
+               <h3 id="Acknowledgements">Acknowledgements</h3>
+               <p> Much of the code for this project was sourced from previous labs for Professor Bo Zhao's
+                  class at the University of Washington, Geography 458: Advanced Digital Geographies. Special
+                  thank you to Tyler McCrea as well, for their continued support throughout the quarter on these
+                  projects.
+            </div>
+         </div>
+      </main>
+   </body>
 </html>
