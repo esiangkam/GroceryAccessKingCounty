@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="This mapping project explores the relationship between locations of grocery stores, and factors such as demographics and transportation.">
@@ -11,209 +11,197 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-  html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff; }
-  .legend {
-      line-height: 16px;
-      width: 180px;
-      color: #333333;
-      font-family: 'Open Sans', cursive;
-      padding: 6px 8px;
-      background: white;
-      background: rgba(255,255,255,0.5);
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      border-radius: 5px;
-  }
-
-  .legend i {
-      width: 16px;
-      height: 16px;
-      float: left;
-      margin-right: 8px;
-      opacity: 0.9;
-  }
-
-  .legend img {
-      width: 16px;
-      height: 16px;
-      margin-right: 3px;
-      float: left;
-  }
-
-  .legend p {
-      font-size: 12px;
-      line-height: 16px;
-      margin: 0;
-  }
-  </style>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
-  <script type="text/javascript" src="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.js"></script>
-</head>
-<body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Grocery Store Access in King County</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-
-  <!-- <main role="main"> -->
-    <div id="map"></div>
+      <style>
+         html,
+         body, #map {
+         width: 100%;
+         height: 100%;
+         margin: 0;
+         background: #fff;
+         }
+         .legend {
+         line-height: 16px;
+         width: 180px;
+         color: #333333;
+         font-family: 'Open Sans', cursive;
+         padding: 6px 8px;
+         background: white;
+         background: rgba(255,255,255,0.5);
+         box-shadow: 0 0 15px rgba(0,0,0,0.2);
+         border-radius: 5px;
+         }
+         .legend i {
+         width: 16px;
+         height: 16px;
+         float: left;
+         margin-right: 8px;
+         opacity: 0.9;
+         }
+         .legend img {
+         width: 16px;
+         height: 16px;
+         margin-right: 3px;
+         float: left;
+         }
+         .legend p {
+         font-size: 12px;
+         line-height: 16px;
+         margin: 0;
+         }
+      </style>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.js"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+         <a class="navbar-brand" href="#">Grocery Store Access in King County</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+               </li>
+               <!-- <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                  </li> -->
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+               <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+         </div>
+      </nav>
+      <!-- <main role="main"> -->
+  <div id="map"></div>
   <!-- </main> -->
   <script>
-    // Create a map object.
-    var mymap = L.map('map', {
-      center: [47.55799042752343, -122.30375024543308],
-      zoom: 10,
-      maxZoom: 14,
-      minZoom: 1,
-      detectRetina: true
-    });
+     // Create a map object.
+     var mymap = L.map('map', {
+       center: [47.55799042752343, -122.30375024543308],
+       zoom: 10,
+       maxZoom: 14,
+       minZoom: 1,
+       detectRetina: true
+     });
 
-    var grayscale = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png');
-    var streets = L.tileLayer('http://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}@2x.png');
-    var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}@2x');
+     // var grayscale = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}@2x.png').addTo(map);
+     // var streets = L.tileLayer('http://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}@2x.png');
+     // var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}@2x');
 
-    // Add a base map.
-    // L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(mymap);
+     // Add a base map.
+     L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(mymap);
 
-    // Add grocery stores GeoJSON Data
-    // Null variable that will hold stores data
-    var stores = null;
+     // Add grocery stores GeoJSON Data
+     // Null variable that will hold stores data
+     var stores = null;
 
-    // Get GeoJSON and put on it on the map when it loads
-    stores = L.geoJson.ajax("assets/grocerystores.geojson", {
-        // assign a function to the onEachFeature parameter of the stores object.
-        // Then each (point) feature will bind a popup window.
-        // The content of the popup window is the values of the store's name, address, and city`
-        onEachFeature: function (feature, layer) {
-            layer.bindPopup('<center>' + feature.properties.NAME + "<br> Location: " + feature.properties.ADDRESS + ', </br>' + feature.properties.CITY);
-        },
-        pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-shopping-basket', color: '#447bd4'})});
-            },
-        attribution: 'Grocery Stores in King County'
-    }).addTo(mymap);
+     // Get GeoJSON and put on it on the map when it loads
+     stores = L.geoJson.ajax("assets/grocerystores.geojson", {
+         // assign a function to the onEachFeature parameter of the stores object.
+         // Then each (point) feature will bind a popup window.
+         // The content of the popup window is the values of the store's name, address, and city`
+         onEachFeature: function (feature, layer) {
+             layer.bindPopup('<center>' + feature.properties.NAME + "<br> Location: " + feature.properties.ADDRESS + ', </br>' + feature.properties.CITY);
+         },
+         pointToLayer: function (feature, latlng) {
+             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-shopping-basket', color: '#447bd4'})});
+             },
+         attribution: 'Grocery Stores in King County'
+     }).addTo(mymap);
 
-    // Set function for color ramp
-    colors = chroma.scale('Oranges').colors(6);
+     var tile1 = L.tileLayer('assets/Tile1_Poverty/{z}/{x}/{y}.png', {
+       attribution: 'Percent 200% Poverty | Data: King County GIS Open Data | Generated by Emily Siangkam',
+       detectRetina: true
+     });
 
-    function setColor(count) {
-        var id = 0;
-        if (count > 68) { id = 5; }
-        else if (count > 52 && count <= 68) { id = 4; }
-        else if (count > 37 && count <= 52) { id = 3; }
-        else if (count > 23 && count <= 37) { id = 2; }
-        else if (count > 4 &&  count <= 23) { id = 1; }
-        else  { id = 0; }
-        return colors[id];
-    }
+     var tile2 = L.tileLayer('assets/Tile2_POC/{z}/{x}/{y}.png', {
+       attribution: 'Percent People of Color | Data: King County GIS Open Data | Generated by Emily Siangkam',
+       detectRetina: true
+     });
 
-    // 7. Create variable for % people of color, and set style function that sets fill
-    // color.md property equal to census tract's POC percentage
-    var poc = null;
+     // Create base layers variable for basemap control
+     var baseLayers = {
+       'Grocery Stores': stores,
+       // 'Streets': streets,
+       // 'Satellite': satellite
+     };
 
-    function style(feature) {
-        return {
-            fillColor: setColor(feature.properties.PNW),
-            fillOpacity: 0.7,
-            weight: 2,
-            opacity: 1,
-            color: '#b4b4b4',
-            dashArray: '5'
-        };
-    }
+     // Create overlay variable for thematic layer control
+     var overlays = {
+       // "Grocery Stores": stores,
+       "Percent 200% of Poverty": tile1,
+       "Percent People of Color": tile2
+     }
 
-    poc = L.geoJson.ajax("assets/poc.geojson", {
-        // assign a function to the onEachFeature parameter of the stores object.
-        // Then each (point) feature will bind a popup window.
-        // The content of the popup window is the value of `feature.properties.PNW`
-        onEachFeature: function (feature, layer) {
-            layer.bindPopup('<center>' + "Percent People of Color: " + feature.properties.PNW + "%");
-        },
-        style: style
-    }).addTo(mymap);
+     // // Create Leaflet control object for Layers
+     // L.control.layers(baseLayers, overlays, {
+     //   collapsed: false,
+     //   position: 'topright'
+     // }).addTo(mymap);
 
-    // Create base layers variable for basemap control
-    var baseLayers = {
-      'Grayscale': grayscale,
-      'Streets': streets,
-      'Satellite': satellite
-    };
+     // L.Control.textbox = L.Control.extend({
+     // 		onAdd: function(map) {
+     //
+     // 		var text = L.DomUtil.create('div');
+     // 		text.id = "info_text";
+     // 		text.innerHTML = "<strong>Grocery Stores in King County!</strong>"
+     // 		return text;
+     // 		},
+     //
+     // 		onRemove: function(map) {
+     // 			// Nothing to do here
+     // 		}
+     // 	});
+     // 	L.control.textbox = function(opts) { return new L.Control.textbox(opts);}
+     // 	L.control.textbox({ position: 'bottomright' }).addTo(mymap);
 
-    // Create overlay variable for thematic layer control
-    var overlays = {
-      "Grocery Stores": stores,
-      "Percent People of Color": poc
-    }
+     L.control.layers(baseLayers, overlays, {
+        collapsed: false,
+        position: 'topright'
+      }).addTo(mymap);
 
-    // Create Leaflet control object for Layers
-    L.control.layers(baseLayers, overlays, {
-      collapsed: false,
-      position: 'topright'
-    }).addTo(mymap);
+      // var legend = L.control({position: 'topright'});
+      // //
+      // // // Function that runs when legend is added to map
+      // legend.onAdd = function () {
+      // //
+      // //     // Create Div Element and Populate it with HTML
+      //     var div = L.DomUtil.create('div', 'legend');
+      //     div.innerHTML += '<b>Food Locations<b><br />';
+      //     div.innerHTML += '<i class="fa fa-shopping-basket"></i><p> Grocery Store </p>';
+      //     div.innerHTML += '<hr><b>Percent People of Color</b><br />';
+      //     div.innerHTML += '<img src="img/collage_albums_5x5_1week.png"><p> 68+ </p>';
+      // //
+      // //     // Return the Legend div containing the HTML content
+      //     return div;
+      // };
+      //
+      // // Add legend to the map
+      // legend.addTo(mymap);
 
-    // Create Leaflet Control Object for Legend
-    var legend = L.control({position: 'topright'});
+      // Add a scale bar to map
+      L.control.scale({position: 'bottomleft'}).addTo(mymap);
 
-    // Function that runs when legend is added to map
-    legend.onAdd = function () {
+      // Add coordinates on map for mouse position
+      L.control.mousePosition().addTo(mymap);
 
-        // Create Div Element and Populate it with HTML
-        var div = L.DomUtil.create('div', 'legend');
-        div.innerHTML += '<b>Food Locations<b><br />';
-        div.innerHTML += '<i class="fa fa-shopping-basket"></i><p> Grocery Store </p>';
-        div.innerHTML += '<hr><b>Percent People of Color</b><br />';
-        div.innerHTML += '<i style="background: ' + colors[5] + '; opacity: 0.5"></i><p> 30+ </p>';
-        div.innerHTML += '<i style="background: ' + colors[4] + '; opacity: 0.5"></i><p> 30+ </p>';
-        div.innerHTML += '<i style="background: ' + colors[3] + '; opacity: 0.5"></i><p> 23-30 </p>';
-        div.innerHTML += '<i style="background: ' + colors[2] + '; opacity: 0.5"></i><p> 13-22 </p>';
-        div.innerHTML += '<i style="background: ' + colors[1] + '; opacity: 0.5"></i><p> 2-12 </p>';
-        div.innerHTML += '<i style="background: ' + colors[0] + '; opacity: 0.5"></i><p> 0-1 </p>';
-
-        // Return the Legend div containing the HTML content
-        return div;
-    };
-
-    // Add legend to the map
-    legend.addTo(mymap);
-
-    // Add a scale bar to map
-    L.control.scale({position: 'bottomleft'}).addTo(mymap);
-
-    // Add coordinates on map for mouse position
-    L.control.mousePosition().addTo(mymap);
-
-</script>
-</body>
+    </script>
+ </body>
 </html>
