@@ -24,7 +24,7 @@ Additional data for grocery stores was found utilizing [Phantombuster](https://p
 - Leaflet
   - Interactive JavaScript map library
   - [L.Control.MousePosition plugin](https://github.com/ardhi/Leaflet.MousePosition)
-  - [Leaflet.MeasureControl plugin](https://github.com/makinacorpus/Leaflet.MeasureControl)
+  - [Leaflet.PolylineMeasure plugin](https://github.com/ppete2/Leaflet.PolylineMeasure)
 - FlatIcon
   - Web icon sets and toolkits; source of grocery bag and bus icon
 - JQuery
