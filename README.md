@@ -10,10 +10,11 @@ Oftentimes, a person's accessibility for healthy food is limited by their whethe
 
 ## Data Sources
 Much of this data can be found on the King County Open GIS Data website, which consolidated census data from the US Census American Community Survey, or data the county tracks themselves. Although there are no dates for this data, most were last updated in 2020.
-- [Transit Routes](https://gis-kingcounty.opendata.arcgis.com/datasets/transit-routes-for-king-county-metro-transitroute-line/data?geometry=-122.470%2C47.467%2C-121.816%2C47.548&orderBy=CURRENT_NEXT_CODE)
 - [Median Household Income from the American Community Survey](https://gis-kingcounty.opendata.arcgis.com/datasets/median-household-income/data?geometry=-127.019%2C46.778%2C-116.566%2C48.078)
 - [Percent People of Color from the American Community Survey](https://gis-kingcounty.opendata.arcgis.com/datasets/percent-people-of-color/data?geometry=-123.099%2C47.269%2C-120.486%2C47.594)
 - [Food Facilities, King County Dept of Health Restaurant Inspection database, 2018](https://gis-kingcounty.opendata.arcgis.com/datasets/food-facilites-multiple-classes-for-king-county-food-facilities-point/data?orderBy=SEAT_CAP&page=14)
+- [Transit Routes](https://gis-kingcounty.opendata.arcgis.com/datasets/transit-routes-for-king-county-metro-transitroute-line/data?geometry=-122.470%2C47.467%2C-121.816%2C47.548&orderBy=CURRENT_NEXT_CODE)
+- [Transit Stops](https://gis-kingcounty.opendata.arcgis.com/datasets/transit-stops-for-king-county-metro-transitstop-point?geometry=-122.199%2C47.542%2C-121.873%2C47.583)
 - [Total Population from the American Community Survey, 2013-2017](https://gis-kingcounty.opendata.arcgis.com/datasets/acs-total-population-acs-b01003-totalpop/data?geometry=-124.412%2C47.106%2C-119.186%2C47.757)
 
 Additional data for grocery stores was found utilizing [Phantombuster](https://phantombuster.com/), a site that allows for data extraction from web searches.
@@ -22,8 +23,9 @@ Additional data for grocery stores was found utilizing [Phantombuster](https://p
 - Leaflet
   - Interactive JavaScript map library
   - [L.Control.MousePosition plugin](https://github.com/ardhi/Leaflet.MousePosition)
+  - [Leaflet.MeasureControl plugin](https://github.com/makinacorpus/Leaflet.MeasureControl)
 - FlatIcon
-  - Web icon sets and toolkits; source of grocery bag icon
+  - Web icon sets and toolkits; source of grocery bag and bus icon
 - JQuery
   - JavaScript library for HTML document traversal and manipulation, event handling, animation, etc.
 - Chroma.js
@@ -41,4 +43,4 @@ Additional data for grocery stores was found utilizing [Phantombuster](https://p
 Inspiration for this project came from the [Healthy Food Availability and Food Bank Network Report](https://www.kingcounty.gov/depts/health/data/~/media/depts/health/data/documents/healthy-food-availability-report.ashx) put out in February 2019. However, considering there is very limited data on what the researchers define as "healthy" food, and other information such as travel time to these locations, further work is needed to fully understand the implications this visualization may have.
 
 ## Acknowledgement
-Much of the code for this project was sourced from previous labs for Professor Bo Zhao's class at the University of Washington, Geography 458: Advanced Digital Geographies. Special thank you to Tyler McCrea as well, for their continued support throughout the quarter on these projects. Additionally, thank you to [Monkik on FlatIcon](https://www.flaticon.com/authors/monkik) for the grocery bag icon.
+Much of the code for this project was sourced from previous labs for Professor Bo Zhao's class at the University of Washington, Geography 458: Advanced Digital Geographies. Special thank you to Tyler McCrea as well, for their continued support throughout the quarter on these projects. Additionally, thank you to [Monkik on FlatIcon](https://www.flaticon.com/authors/monkik) for the grocery bag iconand [Vectors Market on FlatIcon](https://www.flaticon.com/authors/vectors-market) for the bus icon.
